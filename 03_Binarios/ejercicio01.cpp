@@ -1,22 +1,37 @@
 // convertir a binario un decimal
 
-#include <algorithm>
+#include <cmath>
 #include <iostream>
-#include <string>
 using namespace std;
-void decimalBinario(int n) {
-  string binario = "";
-  string invertido = "";
-  while (n > 0) {
+
+int decimalBinario(int n) {
+  int binario = 0;
+  int i = 0;
+  while (n > 0) { // 10
     int numero;
     numero = n % 2;
-    binario.append(to_string(numero));
     n /= 2;
+    binario += numero * pow(10, i);
+    ++i;
   }
-  reverse(binario.begin(), binario.end());
-  cout << binario;
+  return binario;
 }
+
+int binarioDecimal(int n) {
+  int decimal = 0;
+  int i = 0;
+  while (n > 0) {
+    int numero;
+    numero = n % 10;
+    n /= 10;
+    decimal += numero * pow(2, i);
+    ++i;
+  }
+  return decimal;
+}
+
 int main() {
-  decimalBinario(10);
+  cout << decimalBinario(10) << endl;
+  cout << binarioDecimal(1010) << endl;
   return 0;
 }
