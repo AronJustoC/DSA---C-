@@ -147,6 +147,34 @@ void rombo(int altura) {
   }
 }
 
+void mariposa(int altura) {
+
+  for (int i = altura; i >= 0; i--) {
+    for (int j = 0; j < altura - i; j++) {
+      std::cout << "*";
+    }
+    for (size_t j = 0; j < 2 * i; j++) {
+      std::cout << " ";
+    }
+    for (int j = 0; j < altura - i; j++) {
+      std::cout << "*";
+    }
+    std::cout << std::endl;
+  }
+  for (size_t i = 0; i < altura; i++) {
+    for (size_t j = 0; j < altura - i; j++) {
+      std::cout << "*";
+    }
+    for (size_t j = 0; j < 2 * i; j++) {
+      std::cout << " ";
+    }
+    for (size_t j = 0; j < altura - i; j++) {
+      std::cout << "*";
+    }
+    std::cout << std::endl;
+  }
+}
+
 int main() {
   retorarMatrizCuadrada(7);
   cuadradoLetras(4);
@@ -159,6 +187,7 @@ int main() {
   trianguloConsecutivoPro(4);
   trianguloInvertido(4);
   piramide(5);
-  rombo(15);
+  rombo(5);
+  mariposa(7);
   return 0;
 }
