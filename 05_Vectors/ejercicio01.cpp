@@ -11,6 +11,8 @@ vector<int> vec2(3, 0);
 vector<char> vec3 = {'q', 'e', 'g', 'd', 'g', 'h'};
 template <typename T> vector<T> uniquesElements(vector<T> vect);
 int singleNumber(vector<int> numbers);
+int linealSearch(vector<int> numbers, int target);
+vector<int> reverseVector(vector<int>);
 
 int main() {
   printVector(vec);
@@ -42,6 +44,9 @@ int main() {
   vector<int> nums1 = {2, 2, 1};
   int result = singleNumber(nums1);
   cout << result << endl;
+  cout << "El indice es : " << linealSearch(vec1, 1) << endl;
+  cout << "El reverso es: ";
+  printVector(reverseVector(vec1));
   return 0;
 }
 
@@ -70,3 +75,22 @@ int singleNumber(vector<int> numbers) {
   }
   return ans;
 };
+
+// Homework
+// Lineal search
+int linealSearch(vector<int> numbers, int target) {
+  for (int i = 0; i < numbers.size(); i++) {
+    if (target == numbers[i]) {
+      return i;
+    }
+  }
+  return -1;
+}
+// Inverse vector
+vector<int> reverseVector(vector<int> vect) { //[1,2,3]
+  vector<int> reverse;
+  for (int i = vect.size() - 1; i >= 0; i--) {
+    reverse.push_back(vect[i]);
+  };
+  return reverse;
+}
